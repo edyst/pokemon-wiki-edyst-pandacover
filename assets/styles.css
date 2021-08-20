@@ -1,0 +1,253 @@
+:root {
+  --gray1: #99aab5;
+  --gray2: #424242;
+  --black1: #000000b3;
+  --blue1: #4992ca;
+  --orange1: #de713b;
+
+  --nav-btn: var(--orange1);
+  --body-color: var(--blue1);
+  --text-primary: var(--gray1);
+
+  --font-primary: Avenir-Next, Roboto, sans-serif;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 14px;
+  color: #fff;
+  font-family: var(--font-primary);
+}
+
+body {
+  overflow-x: hidden;
+}
+
+.navbar {
+  width: 100%;
+  height: 50px;
+  display: grid;
+  padding: 10px;
+  grid-template-columns: 1fr 2fr;
+}
+
+.logo {
+  width: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo img {
+  width: 100px;
+}
+
+.navbar-nav {
+  display: grid;
+  list-style: none;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nav-link {
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.nav-link i {
+  color: var(--text-primary);
+}
+
+.nav-item:last-child,
+.nav-item:last-child .nav-link {
+  cursor: pointer;
+  color: #fff;
+  background: var(--nav-btn);
+}
+
+/* Home Page */
+
+.flex {
+  gap: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-page::before {
+  top: 50px;
+  content: "";
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  filter: brightness(40%);
+  background: url("images/body-bg.jpg") no-repeat;
+  background-size: 100% 100vh;
+}
+
+.home-page {
+  width: 100%;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-page--section {
+  z-index: 1;
+  width: 70%;
+  height: 70%;
+}
+
+.home-page--section h1 {
+  font-size: 90px;
+  text-transform: uppercase;
+}
+
+.home-page--section h3 {
+  font-size: 33px;
+}
+
+.home-btn {
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease-out 0s;
+}
+
+.home-btn--apply {
+  border: 3px solid var(--blue1);
+  padding: 10px 69px;
+  background: var(--blue1);
+}
+
+.home-btn--register {
+  padding: 10px 40px;
+  background: transparent;
+  border: 3px solid #fff;
+}
+
+.home-btn--apply:hover {
+  background-color: transparent;
+}
+
+.home-btn--register:hover {
+  background: #fff;
+  color: #000;
+}
+
+.home-btn--learn {
+  padding: 10px 20px;
+  border: transparent;
+  color: var(--black1);
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.home-btn--learn::after {
+  content: " Learn more >";
+  font-weight: 800;
+}
+
+/* Pocket Monsters */
+
+.pocket-monsters {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  background: var(--blue1);
+  justify-content: center;
+}
+
+.pm-container {
+  width: 72%;
+  height: 90%;
+}
+
+.pm-container h2 {
+  font-size: 45px;
+  text-align: center;
+  line-height: 100px;
+}
+
+.pm-container h4 {
+  font-size: 30px;
+  text-align: center;
+}
+
+.pm-section {
+  display: flex;
+}
+
+.pm-section--item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.pm-section--item section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+}
+
+.pm-section span i {
+  font-size: 45px;
+}
+.pm-container p {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.pm-section--item p {
+  font-size: 13px;
+  line-height: 20px;
+}
+
+/* Mobile view */
+@media (max-width: 968px) {
+  .navbar {
+    padding: 0 30px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .navbar-nav {
+    display: none;
+  }
+
+  .home-page--section {
+    width: 95%;
+    height: 95%;
+  }
+
+  .home-page--section h1 {
+    font-size: 60px;
+    text-align: center;
+  }
+
+  .home-page--section h3 {
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .home-page--section p {
+    display: flex;
+    justify-content: center;
+  }
+
+  .pm-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
