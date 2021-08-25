@@ -12,7 +12,7 @@
 
   --nav-btn: var(--orange1);
   --body-color: var(--blue1);
-  --text-primary: var(--gray1);
+  --text-primary: var(--gray2);
   --text-disabled: var(--gray3);
   --overlay: var(--black1);
   --footer: var(--black2);
@@ -91,7 +91,6 @@ h6 {
 }
 
 .nav-link {
-  font-weight: 600;
   text-decoration: none;
   color: var(--text-primary);
 }
@@ -117,28 +116,48 @@ h6 {
 }
 
 .dropdown-container {
-  top: 50px;
+  top: 35px;
   left: 0px;
   z-index: 2;
   width: 200px;
   height: 200px;
   display: none;
+  position: absolute;
+  align-items: center;
+  flex-direction: column;
   background: var(--gray4);
+  justify-content: space-evenly;
 }
 
 .dropdown:hover .dropdown-container {
   display: flex;
-  position: absolute;
-  align-items: center;
-  flex-direction: column;
-  justify-content: space-evenly;
+}
+
+.dropdown-container:hover {
+  display: flex;
 }
 
 .dropdown-links {
+  display: flex;
   width: 100%;
+  height: 100%;
   color: #000;
-  text-align: center;
+  align-items: center;
   text-decoration: none;
+  justify-content: center;
+}
+
+.dropdown-links:hover {
+  background: #e9dcdc;
+}
+
+.hamburger {
+  display: none;
+}
+
+.hamburger * {
+  color: #000;
+  font-size: 20px;
 }
 
 /* Home Page */
@@ -165,7 +184,7 @@ h6 {
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  background: url("images/body-bg.jpg") no-repeat;
+  background: url("https://i.imgur.com/ksqOx5F.jpg") no-repeat;
   background-size: 100% 100vh;
 }
 
@@ -201,15 +220,15 @@ h6 {
 }
 
 .home-btn--apply {
-  border: 3px solid var(--blue1); /* #4992ca */
+  border: none;
   padding: 10px 69px;
   background: var(--blue1); /* #4992ca */
 }
 
 .home-btn--register {
   padding: 10px 40px;
-  background: transparent;
-  border: 3px solid #fff;
+  background: var(--transparent);
+  border: 2px solid #fff;
 }
 
 .home-btn--apply:hover {
@@ -223,7 +242,7 @@ h6 {
 
 .home-btn--learn {
   padding: 10px 20px;
-  border: transparent;
+  border: none;
   color: var(--black1); /* #000000b3 */
   border-radius: 15px;
   background-color: #fff;
@@ -239,6 +258,7 @@ h6 {
 .pocket-monsters {
   width: 100%;
   display: flex;
+  padding: 20px 0;
   min-height: 100vh;
   align-items: center;
   background: var(--blue1);
@@ -344,6 +364,11 @@ h6 {
 }
 
 /* Pokemon of the year */
+
+.pokemon-year * {
+  color: #000;
+}
+
 .pokemon-year {
   width: 100%;
   display: flex;
@@ -366,12 +391,14 @@ h6 {
 .pm-name,
 .pm-type {
   text-align: center;
-  color: #000;
   font-weight: 100;
 }
 
+.pm-year-section img {
+  width: 150px;
+}
+
 .pm-year-span {
-  color: #000;
   padding-top: 10px;
 }
 
@@ -470,7 +497,6 @@ td {
 }
 
 .battle-table-data {
-  /* text-align: center; */
   color: var(--text-disabled);
 }
 
@@ -874,15 +900,37 @@ td {
 
   .navbar {
     padding: 0 30px;
+    position: relative;
     grid-template-columns: repeat(2, 1fr);
   }
   .navbar-nav {
     display: none;
+    position: absolute;
+    top: 40px;
+    z-index: 2;
+    width: 100%;
+    height: 600px;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  .hamburger i:hover {
+    cursor: pointer;
   }
 
   .home-page {
     height: 600px;
     background: #000;
+  }
+
+  .home-page--section {
+    opacity: 1;
   }
 
   .home-page--overlay p {
@@ -901,8 +949,68 @@ td {
     height: 650px;
   }
 
+  /* Pokemon Battle mobile */
+
+  .pm-battle-subtitle {
+    padding: 0 10px;
+  }
+
+  .pm-battle-section {
+    flex-direction: column;
+    width: 95%;
+  }
+
+  .battle-paragh {
+    height: auto;
+  }
+
+  /* Pokemon year mobile */
+
+  .pm-year-section {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .pm-year-image,
+  .pm-year-mid,
+  .pm-year-span {
+    flex: 33%;
+  }
+
+  .pm-year-mid {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .pm-year-mid img {
+    width: 100px;
+  }
+
+  /* Stats section mobile */
+  .stats-section {
+    width: 90%;
+  }
+
+  .stats-section img {
+    width: 300px;
+  }
+
+  /* Cards mobile view */
+
   .cards {
     height: auto;
+  }
+
+  /* Footer mobile view */
+
+  .footer-container {
+    flex-wrap: wrap;
+    width: 90%;
+  }
+
+  .footer-section {
+    flex: 50%;
   }
 }
 
